@@ -1,0 +1,7 @@
+REFERENCIAS
+
+Consigna 1)
+
+base de datos: "mongodb+srv://coder12:coder12@cluster0.obxgw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+Credenciales de login: username:admin password: admin
+Ruta de login http://localhost:8080/login
