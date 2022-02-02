@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Products</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  </head>
+  <body>
+
+        <div class="mr-auto bg-light p-5">
+            <h5 class="primary text-center">Message center</h5>
+            <br>
+
+            <h6 class="primary">Author data</h6>
+            <hr>
+
+            <form id="chatForm">
+
+                <input id="firstName" class="form-control" placeholder="Enter your first name">
+                <br>
+                <input id="lastName" class="form-control" placeholder="Enter your last name">
+                <br>
+                <input id="email" type="email" class="form-control" placeholder="Enter your email">
+                <br>
+                <input id="age" type="number" class="form-control" placeholder="Enter your age">
+                <br>
+                <input id="alias" class="form-control" placeholder="Enter your alias">
+                <br>
+                <input id="avatar" class="form-control" placeholder="Enter your avatar URL">
+
+                <br>
+
+                {{#each messages}}
+                    <span id="date">{{this.date}}</span>
+                    <span id="email">{{this.author.id}}</span>
+                    <img width=50px src={{this.author.avatar}}></img>
+                    <span id="firstName">{{this.author.firstName}}</span>
+                    <span id="lastName">{{this.author.lastName}}</span>
+                    <span id="alias">, alias {{this.author.alias}}</span>
+                    <span id="age">({{this.author.age}}):</span>
+                    <br>
+                    <span id="text">{{this.text}}</span>
+                    <br><br>
+                {{/each}}
+
+                <div id="messages"></div>
+
+                <br><br>
+
+                <input id="msg" class="form-control w-25 d-inline" placeholder="Enter your message" autocomplete="off" required>
+                <br><br>
+                <input class="btn btn-primary w-25 d-inline " id="submit-chat" type="submit" value="Send"></input>
+
+            </form>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script src="/main.js"></script>
+    </body>
+</html>

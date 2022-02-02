@@ -1,0 +1,35 @@
+[
+    {
+        "author": {
+            "date":"[1/25/2022, 4:14:42 AM]", 
+            "firstName": "juan", 
+            "lastName":"perez", 
+            "age":22, 
+            "alias":"el loco", 
+            "avatar": "https://1000marcas.net/wp-content/uploads/2020/02/logo-Google.png"
+        },
+        "text": "hola"
+    },
+    {
+        "author": {
+            "date":"[1/25/2022, 4:14:43 AM]",
+            "firstName": "juan2",
+            "lastName":"perez2",
+            "age":23,
+            "alias":"el loco2",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png", "text": "hola2"
+        },
+        "text": "holaaa"
+    },
+    {
+        "author": {
+            "date":"[1/25/2022, 4:14:44 AM]",
+            "firstName": "juan3",
+            "lastName":"perez3",
+            "age":24,
+            "alias":"el loco3",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Playstation_logo_colour.svg/2560px-Playstation_logo_colour.svg.png", "text": "hola3"
+        },
+        "text": "holaaaaaa"
+    }
+]
