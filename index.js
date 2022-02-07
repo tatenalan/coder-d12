@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const ServiceException = require("./exceptions/ServiceException");
 
-//rutas
+// rutas
 const productRouterApi = require('./routes/api/productRouter');
 const productRouter = require('./routes/web/productRouter');
 const messageRouterApi = require('./routes/api/messageRouter');
@@ -81,8 +81,6 @@ app.use(session({
 
 
 
-
-
 //------------------------------------------------------------------------
 // configuro el servidor
 
@@ -95,9 +93,14 @@ server.on('error', error => console.log(`Error on server ${error}`))
 
 
 
+// middlewares
 
-
-
+function auth(req, res, next) {
+    if(req.session.username) {
+        return next();
+    }
+    return res.status(401).send('error de autorización')
+}
 
 //------------------------------------------------------------------------
 // Llamo a las rutas
@@ -145,6 +148,12 @@ app.post('/login', async (req, res) => {
 // LOGOUT
 app.post('/logout', (req, res) => {
     res.render('bye', {username: req.session.username})
+    req.session.destroy()
+})
+
+// auth only
+app.get('/private', auth, (req, res) => {
+    res.send('you are logged in!')
 })
 
 
@@ -175,4 +184,3 @@ io.on('connection', (socket) => {
         io.sockets.emit("messages", message)   
     })
 })
-
